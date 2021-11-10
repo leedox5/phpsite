@@ -1,0 +1,16 @@
+Users
+1 user1
+
+Products
+1 AM 1000
+2 CL 1000
+
+Orders    
+  stat = ['10' : 'CART', '20' : 'Ordered' ]
+1  1 10  
+
+
+Orders_Detail
+                
+1  1  1  2  
+2  1  2  1  
