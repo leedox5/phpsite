@@ -1,0 +1,1 @@
+INSERT INTO Users(name) VALUES('관리자');
