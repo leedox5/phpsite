@@ -10,19 +10,17 @@
         $id = $_SESSION['id'];
     }
     $orders = [];
-    $sql  = " WITH T1 AS (                                                ";
-    $sql .= "  SELECT order_id, max(product_id) product_id, SUM(order_quantity) cnt  ";
-    $sql .= "    FROM orders_detail                                       ";
-    $sql .= "   GROUP BY order_id                                         ";
-    $sql .= " )                                                           ";
     $sql .= " SELECT CASE stat WHEN '20' THEN '주문완료' END stat_desc, A.*, B.*, C.* ";
     $sql .= "   FROM Orders A                                             ";
     $sql .= "       LEFT OUTER JOIN                                       ";
-    $sql .= "        T1 B                                                 ";
-    $sql .= " 	  ON B.order_id = A.id                                    ";
-    $sql .= " 	  LEFT OUTER JOIN                                         ";
+    $sql .= "       (                                                                        ";
+    $sql .= "         SELECT order_id, max(product_id) product_id, SUM(order_quantity) cnt   ";
+    $sql .= "          FROM Orders_Detail GROUP BY order_id                                  ";
+    $sql .= "       )B                                                                       ";
+    $sql .= " 	     ON B.order_id = A.id                                 ";
+    $sql .= " 	    LEFT OUTER JOIN                                       ";
     $sql .= "        Products C                                           ";
-    $sql .= " 	  ON C.id = B.product_id                                  ";
+    $sql .= " 	    ON C.id = B.product_id                                ";
     $sql .= "  WHERE A.user_id = $id                                      ";
     $sql .= "    AND A.stat    >= '20'                                    ";
     
