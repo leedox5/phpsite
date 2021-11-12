@@ -1,0 +1,25 @@
+# PHP 
+# prerequisite
+- apache 2.4
+
+# install
+https://windows.php.net/download
+php-8.0.12-Win32-vs16-x64.zip
+
+# 압축풀기
+C:\php8.0.12
+
+# php.ini
+php.ini-development php.ini 으로 copy
+- mysqli 활성화
+extension=mysqli 
+
+# class 자동 로드하기
+<?php 
+autoload.php
+spl_autoload_register(function($className) {
+    include __DIR__.'/../classes/'.$className.'.php';
+});
+?>
+class를 사용하는 파일에서 autoload.php 만 include 하면된다.
+

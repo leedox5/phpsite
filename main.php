@@ -8,14 +8,26 @@
     $prods = [];
     $sql = "SELECT * FROM Products";
     $result = $conn->query($sql);
+    $message = "";
 
     if($result) {
         while($prod = $result->fetch_assoc()) {
             $prods[] = $prod;
         }
     }
+    $cnt = 0;
+    foreach($prods as $prod) {
+        $prods[$cnt]['no'] = $cnt + 1;
+        $cnt ++;
+    }    
+    session_start();
 
-    $sql = " SELECT * FROM Orders WHERE user_id = 1 AND stat = '10' ";
+    $id = -1;
+    if(isset($_SESSION['id'])) {
+        $id = $_SESSION['id'];
+    }
+
+    $sql = " SELECT * FROM Orders WHERE user_id = $id AND stat = '10' ";
 
     $result = $conn->query($sql);
 
@@ -49,5 +61,5 @@
 
     $conn->close();
 
-    require "./order.php";    
+    require "./order_temp.php";    
 ?>

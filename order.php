@@ -17,8 +17,10 @@
             <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse flex-grow-0" id="navbarSupportedContent">
-            
             <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a class="nav-link" href="signup.php">계정생성</a>
+                </li>            
                 <li>
                     <a class="nav-link" href="#">로그인</a>
                 </li>

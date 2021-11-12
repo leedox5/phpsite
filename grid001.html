@@ -1,0 +1,139 @@
+
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="static/bootstrap.min.css">
+    <link rel="stylesheet" href="static/style.css">
+
+    <title>Beta coffee</title>
+</head>
+<body>
+<nav class="navbar navbar-expand-md navbar-light bg-light border-bottom">
+    <div class="container-fluid">
+        <a class="navbar-brand" href="/">Beta coffee</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse flex-grow-0" id="navbarSupportedContent">
+            
+            <ul class="navbar-nav">
+                <li>
+                    <a class="nav-link" href="/common/login/">로그인</a>
+                </li>
+            </ul>
+            
+        </div>
+    </div>
+</nav>
+
+<div class="container my-2">
+    <h3 class="border-bottom py-2">주문하기</h3>
+
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-4">
+                <div class="card">
+                    <img src="/static/no-image.png" class="card-img-top" alt="..." />
+                    <div class="card-body">
+                        <h5 class="card-title">아메리카노</h5>
+                        <p class="card-text">2,000</p>
+                    </div>
+                </div>
+                <div class="input-group input-group-sm justify-content-end">
+                    <span class="input-group-text">수량</span>
+                    <input type="number" class="form-control">
+                    <button type="submit" class="btn btn-outline-secondary">담기</button>
+                    <button type="submit" class="btn btn-outline-secondary">주문</button>
+                </div>
+            </div>
+            <div class="col-sm-4">
+                <div class="card">
+                    <img src="/static/no-image.png" class="card-img-top" alt="..." />
+                    <div class="card-body">
+                        <h5 class="card-title">아메리카노</h5>
+                        <p class="card-text">2,000</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="card my-2">
+        <div class="card-body">
+            <div class="card-text" style="white-space: pre-line;">아메리카노</div>
+        </div>
+    </div>
+    
+    <div class="input-group input-group-sm justify-content-end">
+        <span class="input-group-text">수량</span>
+        <input type="number" class="form-control">
+        <button type="submit" class="btn btn-outline-secondary">담기</button>
+        <button type="submit" class="btn btn-outline-secondary">주문</button>
+    </div>
+
+    <div class="card my-2">
+        <div class="card-body">
+            <div class="card-text" style="white-space: pre-line;">아메리카노</div>
+        </div>
+    </div>
+    
+    <div class="input-group input-group-sm justify-content-end">
+        <span class="input-group-text">수량</span>
+        <input type="number" class="form-control">
+        <button type="submit" class="btn btn-outline-secondary">담기</button>
+        <button type="submit" class="btn btn-outline-secondary">주문</button>
+    </div>
+    
+    <div class="my-2">
+        <table class="table">
+            <thead class="text-center table-dark">
+                <tr>
+                    <td>NO</td>
+                    <td>품명</td>
+                    <td>수량</td>   
+                </tr>
+            </thead>
+            <tbody>
+                <tr class="text-center">
+                    <td>1</td>
+                    <td>아메리카노</td>
+                    <td>2</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <form action="/answer/create/5" method="post" class="my-3">
+        <input id="csrf_token" name="csrf_token" type="hidden" value="IjY3YjRhMjJlNDc4YjJiODBmYzBiYzJmYWFhMWMyYTU3NTM4Y2EyMTIi.YYpq8A.A8doa9DqwmfgMvUofJwZJM-kVjo">
+        
+        <div class="mb-2">
+            <textarea  name="content" id="content" class="form-control" rows="2"></textarea>
+        </div>
+        <div class="text-end">
+            <input type="submit" value="주문하기" class="btn btn-primary btn-sm">
+        </div>
+    </form>
+</div>
+
+<script src="static/jquery-3.6.0.min.js"></script>
+<script src="static/bootstrap.min.js"></script>
+
+<script type="text/javascript">
+$(document).ready(function() {
+    $(".delete").on("click", function() {
+        if(confirm("정말로 삭제하시겠습니까?")) {
+            location.href = $(this).data("uri");
+        }
+    });
+    $("#btn1").click(function() {
+        $("#collap1").collapse('toggle');
+        $("#comment").collapse('toggle');
+    });
+});
+</script>
+
+</body>
+</html>

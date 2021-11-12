@@ -1,0 +1,55 @@
+# apache
+# install
+https://www.apachelounge.com/download/
+httpd-2.4.51-win64-VS16.zip
+
+C:\Apache24\bin>httpd.exe -k install
+Installing the 'Apache2.4' service
+The 'Apache2.4' service is successfully installed.
+Testing httpd.conf....
+Errors reported here must be corrected before the service can be started.
+(OS 10013)액세스 권한에 의해 숨겨진 소켓에 액세스를 시도했습니다.  : AH00072: make_sock: could not bind to address [::]:80
+(OS 10013)액세스 권한에 의해 숨겨진 소켓에 액세스를 시도했습니다.  : AH00072: make_sock: could not bind to address 0.0.0.0:80
+AH00451: no listening sockets available, shutting down
+AH00015: Unable to open logs
+-> 80 포트를 점유하고 있는 경우
+
+C:\Apache24\bin>netstat -ao
+C:\Apache24\bin>tasklist /fi "pid eq 4"
+
+이미지 이름                    PID 세션 이름              세션#  메모리 사용
+========================= ======== ================ =========== ============
+System                           4 Services                   0         32 K
+
+# [Win+R]   >  services.msc > World Wide Web Publishing 서비스 사용중지
+
+C:\Apache24\bin>httpd.exe -k install
+Installing the 'Apache2.4' service
+The 'Apache2.4' service is successfully installed.
+Testing httpd.conf....
+Errors reported here must be corrected before the service can be started.
+
+# httpd.conf 
+DocumentRoot "C:\projects\phpsite"
+<Directory "C:\projects\phpsite">
+
+C:\Apache24\bin>httpd -k stop
+The 'Apache2.4' service is stopping.
+The 'Apache2.4' service has stopped.
+
+C:\Apache24\bin>httpd -k start
+
+# PHP 연동을 위해 httpd.conf 끝에 추가
+PHPIniDir "C:\php8.0.12"
+LoadModule php_module "C:\php8.0.12\php8apache2_4.dll
+AddHandler application/x-httpd-php .php
+AddType application/x-httpd-php .php .html
+
+# .htaccess 설정
+- Define a default URL for requests that don't map to a file
+FallbackResource /index.php
+
+#
+A fallback handler (in the above case, /blog/index.php) can access 
+the original requested URL via the server variable REQUEST_URI. 
+For example, to access this variable in PHP, use $_SERVER['REQUEST_URI'].

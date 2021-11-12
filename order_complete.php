@@ -9,5 +9,5 @@
     $sql .= sprintf("  WHERE id          = %u    ", $id);
     $conn->query($sql);
     $conn->close();
-    header('Location: main.php');
+    header('Location: order_list.php');
 ?>
