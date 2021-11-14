@@ -1,6 +1,6 @@
 CREATE TABLE Products (
   id           INT           AUTO_INCREMENT
- ,name         VARCHAR(20)
+ ,name         VARCHAR(50)
  ,price        INT
  ,type         VARCHAR(20)
  ,count        INT
