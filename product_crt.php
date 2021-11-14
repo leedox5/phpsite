@@ -2,6 +2,8 @@
     $method = $_SERVER["REQUEST_METHOD"];
     include_once 'dbinfo.php';
     $message = "";
+    $name = "";
+    $price = "";
     if($method === "POST") {
         $name = $_POST["name"];
         $price = $_POST["price"];

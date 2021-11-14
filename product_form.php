@@ -4,11 +4,11 @@
     <form method="post" action="product_crt.php" class="post-form">
         <div class="mb-2">
             <label for="name">상품명</label>
-            <input type="text" class="form-control" name="name" id="name" maxlength="20" value="">
+            <input type="text" class="form-control" name="name" id="name" maxlength="20" value="<?= $name ?>">
         </div>
         <div class="mb-2">
             <label for="price">가격</label>
-            <input type="text" class="form-control" name="price" id="price" value="">
+            <input type="text" class="form-control" name="price" id="price" value="<?= $price ?>">
         </div>
         <button type="submit" class="btn btn-primary">저장</button>
     </form>
