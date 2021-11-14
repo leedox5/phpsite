@@ -15,7 +15,7 @@
                 <p class="card-text"><?= number_format($prod['price']) ?></p>
             </div>
         </div>
-        <form action="crt_order.php" method="post">
+        <form action="order_crt.php" method="post">
             <div class="input-group input-group-sm justify-content-end">
                 <span class="input-group-text">수량</span>
                 <input type="hidden" name="product_id" id="product_id" value="<?= $prod['id'] ?>">

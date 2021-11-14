@@ -1,8 +1,9 @@
 CREATE TABLE Orders (
-  id           INT           AUTO_INCREMENT
+  id          INT           AUTO_INCREMENT
  ,user_id     INT
  ,total_price INT
  ,stat        VARCHAR(10)
+ ,order_date  TIMESTAMP
  ,CONSTRAINT Orders_PK PRIMARY KEY(id)
 );
 

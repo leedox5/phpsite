@@ -51,8 +51,8 @@ include("base.php");
                 <?php foreach($products as $product): ?>
                 <tr class="text-center">
                     <td><?= $product['no'] ?></td>
-                    <td class="text-start"><a href="product_modify.php?id=<?= $product['id'] ?>"><?= $product['name'] ?></a></td>
-                    <td><?= $product['price'] ?></td>
+                    <td class="text-start"><a href="product_crt.php?id=<?= $product['id'] ?>"><?= $product['name'] ?></a></td>
+                    <td><?= number_format($product['price']) ?></td>
                     <td class="text-end">
                         <a href="#" class="delete btn btn-sm btn-outline-secondary" data-uri="product_delete.php?id=<?= $product['id'] ?>">삭제</a>
                     </td>
@@ -62,6 +62,8 @@ include("base.php");
         </table>
     </div>
     <div>
+        <a href="product_crt.php" class="btn btn-primary">상품 등록하기</a>
+    </div>    
 </div>
 
 <?php include("bottom.php"); ?>

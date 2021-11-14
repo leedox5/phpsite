@@ -19,7 +19,7 @@
     $sql = "SELECT * FROM Orders WHERE user_id = $id AND stat = '10' ";
     $result = $conn->query($sql);
     if ($result->num_rows == 0) {
-        $sql = "INSERT INTO Orders(user_id, total_price, stat) VALUES ($id, 0, '10')";
+        $sql = "INSERT INTO Orders(user_id, total_price, stat, order_date) VALUES ($id, 0, '10', now())";
         if ($conn->query($sql) === TRUE) {
             echo "OK";
         } else {

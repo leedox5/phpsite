@@ -10,7 +10,7 @@
         $id = $_SESSION['id'];
     }
     $orders = [];
-    $sql .= " SELECT CASE stat WHEN '20' THEN '주문완료' END stat_desc, A.*, B.*, C.* ";
+    $sql  = " SELECT CASE stat WHEN '20' THEN '주문완료' END stat_desc, A.*, B.*, C.* ";
     $sql .= "   FROM Orders A                                             ";
     $sql .= "       LEFT OUTER JOIN                                       ";
     $sql .= "       (                                                                        ";

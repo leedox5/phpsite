@@ -32,6 +32,7 @@ class OrderController {
                 }
                 $_SESSION['id'] = $user['id'];
                 $_SESSION['user_id'] = $user['user_id'];
+                $_SESSION['admin_yn'] = $user['admin_yn'];
                 header('Location: /');        
             } else {
                 $message = "아이디 또는 비밀번호를 확인하세요";
