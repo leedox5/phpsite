@@ -4,7 +4,7 @@
     <form method="post" action="product_crt.php" class="post-form">
         <div class="mb-2">
             <label for="name">상품명</label>
-            <input type="text" class="form-control" name="name" id="name" value="">
+            <input type="text" class="form-control" name="name" id="name" maxlength="20" value="">
         </div>
         <div class="mb-2">
             <label for="price">가격</label>
