@@ -33,7 +33,7 @@ class OrderController {
                 $_SESSION['id'] = $user['id'];
                 $_SESSION['user_id'] = $user['user_id'];
                 $_SESSION['admin_yn'] = $user['admin_yn'];
-                header('Location: /');        
+                header('Location: main.php');        
             } else {
                 $message = "아이디 또는 비밀번호를 확인하세요";
                 include("login.php");
@@ -47,7 +47,7 @@ class OrderController {
     public function logout() {
         session_start();        
         session_destroy();
-        header('Location: /');
+        header('Location: main.php');
     }
 }
 ?>
