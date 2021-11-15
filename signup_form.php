@@ -3,19 +3,19 @@
     <form method="post" action="signup_c.php" class="post-form">
         <div class="mb-2">
             <label for="username">사용자 ID</label>
-            <input type="text" class="form-control" name="userid" id="userid" value="">
+            <input type="text" required class="form-control" name="userid" id="userid" value="" minlength="6" maxlength="10" onkeypress="return /[a-z]/i.test(event.key)">
         </div>
         <div class="mb-2">
             <label for="password1">비밀번호</label>
-            <input type="password" class="form-control" name="password1" id="password1" value="">
+            <input type="password" required minlength="8" maxlength="15" class="form-control" name="password1" id="password1" value="">
         </div>
         <div class="mb-2">
             <label for="password2">비밀번호 확인</label>
-            <input type="password" class="form-control" name="password2" id="password2" value="">
+            <input type="password" required minlength="8" maxlength="15" class="form-control" name="password2" id="password2" value="">
         </div>
         <div class="mb-2">
             <label for="email">이메일</label>
-            <input type="text" class="form-control" name="email" id="email" value="">
+            <input type="email" required class="form-control" maxlength="20" name="email" id="email" value="">
         </div>
         <button type="submit" class="btn btn-primary">생성하기</button>
     </form>
