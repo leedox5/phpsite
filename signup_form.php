@@ -15,7 +15,7 @@
         </div>
         <div class="mb-2">
             <label for="email">이메일</label>
-            <input type="email" required class="form-control" maxlength="20" name="email" id="email" value="">
+            <input type="email" required class="form-control" maxlength="50" name="email" id="email" value="">
         </div>
         <button type="submit" class="btn btn-primary">생성하기</button>
     </form>
