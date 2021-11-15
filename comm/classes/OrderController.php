@@ -17,6 +17,8 @@ class OrderController {
     public function login() {
         $method = $_SERVER["REQUEST_METHOD"];
         include_once('dbinfo.php');
+        $userid = "";
+        $password = "";
         $message = "";
         if($method === "POST") {
             $userid = $_POST["userid"];
@@ -25,15 +27,20 @@ class OrderController {
             $sql = sprintf(" SELECT * FROM Users WHERE user_id = '%s'", $userid);
             $result = $conn->query($sql);
             $user = $result->fetch_assoc();
-            $hash_pw = $user['pwd'];
-            if(password_verify($password, $hash_pw)) {
-                if(!session_id()) {
-                    session_start();
+            if($user) {
+                $hash_pw = $user['pwd'];
+                if(password_verify($password, $hash_pw)) {
+                    if(!session_id()) {
+                        session_start();
+                    }
+                    $_SESSION['id'] = $user['id'];
+                    $_SESSION['user_id'] = $user['user_id'];
+                    $_SESSION['admin_yn'] = $user['admin_yn'];
+                    header('Location: main.php');        
+                } else {
+                    $message = "아이디 또는 비밀번호를 확인하세요";
+                    include("login.php");
                 }
-                $_SESSION['id'] = $user['id'];
-                $_SESSION['user_id'] = $user['user_id'];
-                $_SESSION['admin_yn'] = $user['admin_yn'];
-                header('Location: main.php');        
             } else {
                 $message = "아이디 또는 비밀번호를 확인하세요";
                 include("login.php");
