@@ -52,7 +52,7 @@ include("base.php");
                 <tr class="text-center">
                     <td><?= $user['no'] ?></td>
                     <td class="text-start"><a href="signup_c.php?id=<?= $user['id'] ?>"><?= $user['user_id'] ?></a></td>
-                    <td><?= $user['email'] ?></td>
+                    <td class="text-start"><?= $user['email'] ?></td>
                     <td class="text-end">
                         <a href="#" class="delete btn btn-sm btn-outline-secondary" data-uri="user_delete.php?id=<?= $user['id'] ?>">삭제</a>
                     </td>
