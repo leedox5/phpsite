@@ -29,6 +29,8 @@
         $result = $conn->query($sql);
         $row = $result->fetch_assoc();
     } else {
+        $sql = "UPDATE Orders SET order_date = now() WHERE user_id = $id AND stat = '10' ";
+        $conn->query($sql);
         $row = $result->fetch_assoc();
     }
     $sql = sprintf("INSERT INTO Orders_Detail(order_id, product_id, order_quantity) VALUES (%u, %s, %s)", $row['id'], $product_id, $qty);
