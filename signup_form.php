@@ -3,7 +3,7 @@
     <form method="post" action="signup_c.php" class="post-form">
         <div class="mb-2">
             <label for="username">사용자 ID</label>
-            <input type="text" required class="form-control" name="userid" id="userid" value="" minlength="6" maxlength="10" onkeypress="return /[a-z]/i.test(event.key)">
+            <input type="text" required pattern="^[a-zA-Z0-9]+$" class="form-control" name="userid" id="userid" value="" minlength="6" maxlength="10">
         </div>
         <div class="mb-2">
             <label for="password1">비밀번호</label>
