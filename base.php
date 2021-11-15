@@ -26,6 +26,9 @@
                 <li>
                     <a class="nav-link" href="sales_list.php">판매현황</a>
                 </li>
+                <li>
+                    <a class="nav-link" href="user_list.php">회원관리</a>
+                </li>
                 <?php } ?>
                 <li>
                     <a class="nav-link" href="order_list.php">주문내역</a>

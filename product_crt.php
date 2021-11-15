@@ -1,4 +1,5 @@
 <?php
+    session_start();
     $method = $_SERVER["REQUEST_METHOD"];
     include_once 'dbinfo.php';
     $message = "";

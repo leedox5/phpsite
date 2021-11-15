@@ -3,7 +3,7 @@
     <form method="post" action="signup_c.php" class="post-form">
         <div class="mb-2">
             <label for="username">사용자 ID</label>
-            <input type="text" required pattern="^[a-zA-Z0-9]+$" class="form-control" name="userid" id="userid" value="" minlength="6" maxlength="10">
+            <input type="text" required pattern="^[a-zA-Z0-9]+$" class="form-control" name="userid" id="userid" value="<?= $userid ?>" minlength="6" maxlength="10">
         </div>
         <div class="mb-2">
             <label for="password1">비밀번호</label>
@@ -15,9 +15,9 @@
         </div>
         <div class="mb-2">
             <label for="email">이메일</label>
-            <input type="email" required class="form-control" maxlength="50" name="email" id="email" value="">
+            <input type="email" required class="form-control" maxlength="50" name="email" id="email" value="<?= $email ?>">
         </div>
-        <button type="submit" class="btn btn-primary">생성하기</button>
+        <button type="submit" class="btn btn-primary">저장</button>
     </form>
     <?php if ($message) : ?>
     <div class="alert alert-danger" role="alert">

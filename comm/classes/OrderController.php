@@ -24,7 +24,7 @@ class OrderController {
             $userid = $_POST["userid"];
             $password = $_POST["password"];
             
-            $sql = sprintf(" SELECT * FROM Users WHERE user_id = '%s'", $userid);
+            $sql = sprintf(" SELECT * FROM Users WHERE user_id = '%s' AND IFNULL(use_yn, 'Y') = 'Y' ", $userid);
             $result = $conn->query($sql);
             $user = $result->fetch_assoc();
             if($user) {

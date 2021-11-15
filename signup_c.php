@@ -1,7 +1,11 @@
 <?php
+    session_start();
     $method = $_SERVER["REQUEST_METHOD"];
     include_once 'dbinfo.php';
     $message = "";
+    $id = "";
+    $userid = "";
+    $email = "";
     if($method === "POST") {
         $userid = $_POST["userid"];
         $password1 = $_POST["password1"];
@@ -23,6 +27,15 @@
             $conn->close();
         }
     } else {
+        if(!empty($_GET['id'])) {
+            $id = $_GET['id'];
+            $sql = "SELECT * FROM Users WHERE id = $id ";
+            $result = $conn->query($sql);
+            $user = $result->fetch_assoc();
+            $conn->close();
+            $userid = $user["user_id"];
+            $email = $user["email"];
+        }
         include("signup_form.php");
     }
 ?>
