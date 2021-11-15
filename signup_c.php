@@ -7,6 +7,7 @@
     $userid = "";
     $email = "";
     if($method === "POST") {
+        // POST로 전송된 경우 각 form의 값으로 저장
         $userid = $_POST["userid"];
         $password1 = $_POST["password1"];
         $password2 = $_POST["password2"];
@@ -27,6 +28,7 @@
             $conn->close();
         }
     } else {
+        // id값이 GET으로 전달될경우 수정모드
         if(!empty($_GET['id'])) {
             $id = $_GET['id'];
             $sql = "SELECT * FROM Users WHERE id = $id ";

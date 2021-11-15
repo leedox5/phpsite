@@ -5,6 +5,7 @@
         die('Could not connect: ' . $conn->connect_error);
     }
 
+    //주문가능한 상품 목록 보여주기
     $prods = [];
     $sql = "SELECT * FROM Products";
     $result = $conn->query($sql);
@@ -27,6 +28,7 @@
         $id = $_SESSION['id'];
     }
 
+    // stat: 10 - 주문대기
     $sql = " SELECT * FROM Orders WHERE user_id = $id AND stat = '10' ";
 
     $result = $conn->query($sql);

@@ -10,6 +10,7 @@
         $id = $_SESSION['id'];
     }
     $orders = [];
+    // 주문상태가 10이상인것(주문대기 이후)
     $sql  = " SELECT CASE stat WHEN '20' THEN '주문완료' END stat_desc, A.*, B.*, C.* ";
     $sql .= "   FROM Orders A                                             ";
     $sql .= "       LEFT OUTER JOIN                                       ";

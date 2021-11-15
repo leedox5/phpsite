@@ -1,3 +1,4 @@
+-- 주문 상세 정보
 CREATE TABLE Orders_Detail (
   id             INT    AUTO_INCREMENT
  ,order_id       INT

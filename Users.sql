@@ -1,3 +1,4 @@
+-- 사용자 정보
 CREATE TABLE Users (
   id       INT           AUTO_INCREMENT
  ,user_id  VARCHAR(20)

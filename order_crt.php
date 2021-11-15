@@ -19,6 +19,7 @@
     $sql = "SELECT * FROM Orders WHERE user_id = $id AND stat = '10' ";
     $result = $conn->query($sql);
     if ($result->num_rows == 0) {
+        // 주문대기중인 건이 없다면 주문 생성
         $sql = "INSERT INTO Orders(user_id, total_price, stat, order_date) VALUES ($id, 0, '10', now())";
         if ($conn->query($sql) === TRUE) {
             echo "OK";
@@ -33,6 +34,7 @@
         $conn->query($sql);
         $row = $result->fetch_assoc();
     }
+    // 상세 테이블에 데이터 넣기
     $sql = sprintf("INSERT INTO Orders_Detail(order_id, product_id, order_quantity) VALUES (%u, %s, %s)", $row['id'], $product_id, $qty);
     $conn->query($sql);
 

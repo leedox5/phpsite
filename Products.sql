@@ -1,3 +1,4 @@
+-- 상품정보
 CREATE TABLE Products (
   id           INT           AUTO_INCREMENT
  ,name         VARCHAR(50)

@@ -1,3 +1,4 @@
+-- 주문 정보
 CREATE TABLE Orders (
   id          INT           AUTO_INCREMENT
  ,user_id     INT

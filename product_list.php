@@ -4,7 +4,7 @@ include("base.php");
 ?>
 
 <?php
-
+    // 상품관리
     $message = "";
 
     if(isset($_SESSION['id'])) {

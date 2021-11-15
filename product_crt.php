@@ -9,6 +9,7 @@
     if($method === "POST") {
         $message = "";
 
+        // validation 체크
         if(empty($_POST["name"])) {
             $message .= "상품명은 필수입력입니다.";
             $chk_yn = "N";    
