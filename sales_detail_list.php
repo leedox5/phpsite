@@ -80,6 +80,11 @@ include("base.php");
             </tbody>
         </table>
     </div>
+    <div class="btn-toolbar justify-content-end mb-2">
+        <div class="btn-group btn-group-sm">
+            <a href="sales_list.php" class="btn btn-outline-secondary">목록으로</a>
+        </div>
+    </div>
 </div>
 
 <?php include("bottom.php"); ?>
