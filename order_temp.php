@@ -58,7 +58,7 @@
                     <td><?= $order['order_quantity'] ?></td>
                     <td><?= $order['amt'] ?></td>
                     <td class="text-end">
-                        <a href="#" class="delete btn btn-sm btn-outline-secondary" data-uri="delete_order.php?id=<?= $order['id'] ?>">삭제</a>
+                        <a href="#" class="delete btn btn-sm btn-outline-secondary" data-uri="order_delete.php?id=<?= $order['id'] ?>">삭제</a>
                     </td>
                 </tr>
                 <?php endforeach; ?>
