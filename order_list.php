@@ -62,7 +62,7 @@
                     <td><?= $order['no'] ?></td>
                     <td class="text-start"><?= $order['name']?></td>
                     <td><?= $order['cnt'] ?></td>
-                    <td><?= $order['total_price'] ?></td>
+                    <td><?= number_format($order['total_price']) ?></td>
                     <td><?= $order['stat_desc'] ?></td>
                 </tr>
                 <?php endforeach; ?>
