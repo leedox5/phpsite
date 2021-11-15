@@ -48,19 +48,19 @@
             $conn->close();
         }
     } else {
+        if(!empty($_GET['id'])) {
+            $id = $_GET['id'];
 
-        $id = $_GET['id'];
-
-        $sql = sprintf("SELECT * FROM Products WHERE id = %u", $id);
-        $result = $conn->query($sql);
-        $product = $result->fetch_assoc();
+            $sql = sprintf("SELECT * FROM Products WHERE id = %u", $id);
+            $result = $conn->query($sql);
+            $product = $result->fetch_assoc();
+        
+            $conn->close();
     
-        $conn->close();
-
-        $id    = $product["id"];
-        $name  = $product["name"];
-        $price = $product["price"];
-
+            $id    = $product["id"];
+            $name  = $product["name"];
+            $price = $product["price"];
+        }
         include("product_form.php");
     }
 ?>

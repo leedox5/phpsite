@@ -9,7 +9,7 @@
         </div>
         <div class="mb-2">
             <label for="price">가격</label>
-            <input type="number" class="form-control" name="price" id="price" value="<?= $price ?>">
+            <input type="number" class="form-control" name="price" id="price" maxlength="5" value="<?= $price ?>">
         </div>
         <button type="submit" class="btn btn-primary">저장</button>
     </form>
