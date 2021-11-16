@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <link rel="stylesheet" href="/static/bootstrap.min.css">
-    <link rel="stylesheet" href="/static/style.css">
+    <link rel="stylesheet" href="static/bootstrap.min.css">
+    <link rel="stylesheet" href="static/style.css">
 
     <title>Error</title>
 </head>
@@ -15,7 +15,7 @@
             <div class="alert alert-danger" role="alert">
                 <?= $message ?>
             </div>
-            <a href="/main.php" class="btn btn-link">홈으로 돌아가기</a>
+            <a href="main.php" class="btn btn-link">홈으로 돌아가기</a>
         </div>
     </div>
 </div>

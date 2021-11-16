@@ -11,7 +11,7 @@
             <label for="price">가격</label>
             <input type="number" class="form-control" name="price" id="price" maxlength="5" value="<?= $price ?>">
         </div>
-        <button type="submit" class="btn btn-primary">저장</button>
+        <button type="submit" class="btn btn-sm btn-outline-secondary">저장</button>
     </form>
     <?php if ($message) : ?>
     <div class="alert alert-danger mt-2" role="alert">

@@ -59,7 +59,7 @@ include("base.php");
                     <td><a href="sales_detail_list.php?id=<?= $order['id'] ?>"><?= $order['no'] ?></a></td>
                     <td><?= $order['order_date'] ?></td>
                     <td class="text-start"><?= $order['user_id'] ?></td>
-                    <td><?= number_format($order['total_price']) ?></td>
+                    <td class="text-end"><?= number_format($order['total_price']) ?></td>
                 </tr>
                 <?php endforeach; ?>
             </tbody>

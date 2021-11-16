@@ -25,14 +25,14 @@ include("base.php");
     $sql .= "       ,A.product_id                 ". PHP_EOL;
     $sql .= "       ,C.name                       ". PHP_EOL;
     $sql .= "       ,A.order_quantity             ". PHP_EOL;
-    $sql .= "       ,B.total_price                ". PHP_EOL;
+    $sql .= "       ,A.order_quantity * C.price sub_price  ". PHP_EOL;
     $sql .= "   FROM Orders_Detail A              ". PHP_EOL;
     $sql .= "       LEFT OUTER JOIN               ". PHP_EOL;
     $sql .= "        Orders B                     ". PHP_EOL;
-    $sql .= " 	  ON B.id = A.order_id            ". PHP_EOL;
+    $sql .= " 	    ON B.id = A.order_id          ". PHP_EOL;
     $sql .= "       LEFT OUTER JOIN               ". PHP_EOL;
     $sql .= "        Products C                   ". PHP_EOL;
-    $sql .= " 	  ON C.id = A.product_id          ". PHP_EOL;
+    $sql .= " 	    ON C.id = A.product_id        ". PHP_EOL;
     $sql .= "       LEFT OUTER JOIN               ". PHP_EOL;
     $sql .= "        Users D                      ". PHP_EOL;
     $sql .= " 	  ON D.id = B.user_id             ". PHP_EOL;
@@ -74,7 +74,7 @@ include("base.php");
                     <td><?= $order['user_id'] ?></td>
                     <td class="text-start"><?= $order['name'] ?></td>
                     <td class="text-end"><?= $order['order_quantity'] ?></td>
-                    <td><?= number_format($order['total_price']) ?></td>
+                    <td><?= number_format($order['sub_price']) ?></td>
                 </tr>
                 <?php endforeach; ?>
             </tbody>

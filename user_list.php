@@ -62,7 +62,7 @@ include("base.php");
         </table>
     </div>
     <div>
-        <a href="signup_c.php" class="btn btn-primary">회원 등록하기</a>
+        <a href="signup_c.php" class="btn btn-sm btn-outline-secondary">회원 등록하기</a>
     </div>    
 </div>
 
