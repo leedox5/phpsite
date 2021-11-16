@@ -62,7 +62,7 @@ include("base.php");
         </table>
     </div>
     <div>
-        <a href="product_crt.php" class="btn btn-primary">상품 등록하기</a>
+        <a href="product_crt.php" class="btn btn-sm btn-outline-secondary">상품 등록하기</a>
     </div>    
 </div>
 

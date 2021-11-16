@@ -17,7 +17,7 @@
             <label for="email">이메일</label>
             <input type="email" required class="form-control" maxlength="50" name="email" id="email" value="<?= $email ?>">
         </div>
-        <button type="submit" class="btn btn-primary">저장</button>
+        <button type="submit" class="btn btn-sm btn-outline-secondary">저장</button>
     </form>
     <?php if ($message) : ?>
     <div class="alert alert-danger" role="alert">
